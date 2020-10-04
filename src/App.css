@@ -37,6 +37,22 @@ a:visited {
   margin: 5vh 9vw;
   padding-left: 5vw;
   text-align: left;
+  background-color: rgb(160, 198, 223);
+}
+
+.addNewPost {
+  display: flex;
+  flex-flow: row;
+  border: 2px solid black;
+  margin: 5vh 9vw;
+  padding: 2vh 5vw;
+  background-color: rgb(147, 164, 236);
+  text-align: left;
+  justify-content: space-between;
+}
+
+button:hover {
+  background-color: rgb(27, 99, 231);
 }
 
 @keyframes App-logo-spin {

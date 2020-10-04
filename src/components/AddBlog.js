@@ -6,30 +6,63 @@ export default class AddBlog extends Component {
     this.state = {
       title: "",
       description: "",
-      author: ""
+      author: "",
+      authoiId: ""
     };
   }
 
+  handleTitleChange = e => {
+    this.setState({ title: e.target.value });
+  };
+  handleDescriptionChange = e => {
+    this.setState({ description: e.target.value });
+  };
+  handleAuthorChange = e => {
+    this.setState({ author: e.target.value });
+  };
+  handleAuthorIdChange = e => {
+    this.setState({ authorId: e.target.value });
+  };
+
+  handleSubmit = () => {
+    this.props.submitItem(this.state);
+    this.setState({
+      title: "",
+      description: "",
+      author: "",
+      authoiId: ""
+    });
+  };
+
   render() {
     return (
-      <div>
+      <div className="addNewPost">
+        <label>Title</label>
         <input
           type="text"
           value={this.state.title}
-          onChange={this.handleChange}
+          name="Title"
+          onChange={this.handleTitleChange}
         />
-        <input
+        <br />
+
+        <label>Write post here</label>
+        <textarea
           type="text"
           value={this.state.description}
-          onChange={this.handleChange}
+          onChange={this.handleDescriptionChange}
         />
+        <br />
+        <label>Author</label>
         <input
           type="text"
           value={this.state.author}
-          onChange={this.handleChange}
+          onChange={this.handleAuthorChange}
         />
+        <br />
+
         <button className="button" onClick={this.handleSubmit}>
-          Add a new todo
+          Publish Post
         </button>
       </div>
     );

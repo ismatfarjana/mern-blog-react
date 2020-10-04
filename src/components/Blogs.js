@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 
 import Blog from "./Blog";
+import AddBlog from "./AddBlog";
 
 export default class Items extends Component {
   constructor(props) {
@@ -22,6 +23,22 @@ export default class Items extends Component {
     this.getBlogs();
   }
 
+  handleSubmitBlog = newBlog => {
+    axios
+      .post(`https://syedas-mern-blog-api.herokuapp.com/blogs/addBlog`, {
+        title: newBlog.title,
+        description: newBlog.description,
+        author: newBlog.author,
+        authorId: "5f798f68c4657b07bb97268a",
+        date: new Date()
+      })
+      .then(res => {
+        const updatedBlogs = this.state.blogs.concat(res.data);
+        this.setState({ blogs: updatedBlogs });
+      })
+      .catch(err => console.log(err));
+  };
+
   renderBlogs = () => {
     return this.state.blogs.map(blog => {
       console.log(blog);
@@ -39,6 +56,10 @@ export default class Items extends Component {
   render() {
     return (
       <div>
+        <div className="addItem">
+          <h2>New Blog post</h2>
+          <AddBlog submitItem={this.handleSubmitBlog} />
+        </div>
         <h2>All Blog posts</h2>
         {this.state.blogs.length ? this.renderBlogs() : <p>List is loading</p>}
       </div>

@@ -4,6 +4,8 @@ import axios from "axios";
 import Blog from "./Blog";
 import AddBlog from "./AddBlog";
 
+import Users from "./Users";
+
 export default class Items extends Component {
   constructor(props) {
     super(props);
@@ -56,12 +58,13 @@ export default class Items extends Component {
   render() {
     return (
       <div className="allBlogComponents">
-        <div className="addItem">
-          <h2>New Blog post</h2>
-          <AddBlog submitItem={this.handleSubmitBlog} />
+        <div className="showUser">
+          <Users />
         </div>
 
         <div className="posts">
+          <h2>New Blog post</h2>
+          <AddBlog submitItem={this.handleSubmitBlog} />
           <h2>All Blog posts</h2>
           {this.state.blogs.length ? (
             this.renderBlogs()

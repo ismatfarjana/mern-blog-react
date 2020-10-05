@@ -19,7 +19,7 @@
   display: flex;
   flex-direction: row;
   text-align: right;
-  padding-right: 10vw;
+  padding-right: 6vw;
   justify-content: space-between;
   font-size: calc(10px + 2vmin);
   color: white;
@@ -51,21 +51,46 @@ a:visited {
 }
 
 .oneBlog {
-  margin: 5vh 0vw 5vh 0vw;
-  padding: 1vh 5vw;
+  margin: 5vh 1.5vw -3vh 1vw;
+  padding: 1vh 3vw;
   text-align: left;
-  background-color: rgb(160, 198, 223);
+  background-color: rgba(160, 198, 223, 0.863);
+}
+.user {
+  /* background-color: rgba(114, 114, 124, 0.699); */
+  padding: 0vw 1vw;
+  height: calc(15px + 3vmin);
+  display: flex;
+  justify-content: right;
+}
+
+.userList {
+  text-align: left;
+}
+
+.showUser {
+  width: calc(10px + 30vmin);
 }
 
 .addNewPost {
   display: flex;
   flex-flow: column;
-  border: 2px solid black;
-  margin: 5vh 0vw 5vh 0vw;
-  padding: 2vh 5vw;
-  background-color: rgb(158, 219, 243);
+  margin: 5vh 1vw 5vh 1.5vw;
+  padding: 2vh 3vw;
+  background-color: rgba(158, 219, 243, 0.822);
   text-align: left;
   justify-content: space-between;
+}
+
+input {
+  width: calc(10px + 30vmin);
+}
+textarea {
+  width: calc(10px + 30vmin);
+}
+
+button {
+  width: calc(10px + 30vmin);
 }
 
 button:hover {

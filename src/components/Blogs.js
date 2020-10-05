@@ -55,13 +55,19 @@ export default class Items extends Component {
 
   render() {
     return (
-      <div>
+      <div className="allBlogComponents">
         <div className="addItem">
           <h2>New Blog post</h2>
           <AddBlog submitItem={this.handleSubmitBlog} />
         </div>
-        <h2>All Blog posts</h2>
-        {this.state.blogs.length ? this.renderBlogs() : <p>List is loading</p>}
+        <div className="posts">
+          <h2>All Blog posts</h2>
+          {this.state.blogs.length ? (
+            this.renderBlogs()
+          ) : (
+            <p>List is loading</p>
+          )}
+        </div>
       </div>
     );
   }

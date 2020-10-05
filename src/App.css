@@ -14,14 +14,20 @@
 }
 
 .App-header {
-  background-color: #2d0a44;
+  background-color: #6bb6b0;
   min-height: 15vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  text-align: right;
+  padding-right: 10vw;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.sociallogo {
+  padding: 1vh 1vw;
+  width: calc(10px + 1vmin);
 }
 
 a {
@@ -32,21 +38,27 @@ a {
 a:visited {
   color: #61dafb;
 }
+
+.allBlogComponents {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+}
+
 .oneBlog {
-  border: 2px solid black;
-  margin: 5vh 9vw;
-  padding-left: 5vw;
+  margin: 5vh 0vw 5vh 0vw;
+  padding: 1vh 5vw;
   text-align: left;
   background-color: rgb(160, 198, 223);
 }
 
 .addNewPost {
   display: flex;
-  flex-flow: row;
+  flex-flow: column;
   border: 2px solid black;
-  margin: 5vh 9vw;
+  margin: 5vh 0vw 5vh 0vw;
   padding: 2vh 5vw;
-  background-color: rgb(147, 164, 236);
+  background-color: rgb(158, 219, 243);
   text-align: left;
   justify-content: space-between;
 }

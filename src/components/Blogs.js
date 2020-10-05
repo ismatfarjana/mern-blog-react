@@ -60,6 +60,7 @@ export default class Items extends Component {
           <h2>New Blog post</h2>
           <AddBlog submitItem={this.handleSubmitBlog} />
         </div>
+
         <div className="posts">
           <h2>All Blog posts</h2>
           {this.state.blogs.length ? (

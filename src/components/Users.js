@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 
 import User from "./User";
+import AddUser from "./AddUser";
 
 export default class Users extends Component {
   constructor(props) {
@@ -21,6 +22,18 @@ export default class Users extends Component {
     this.getUsers();
   }
 
+  handleSubmitUser = newUser => {
+    axios
+      .post(`https://syedas-mern-blog-api.herokuapp.com/users/addUser`, {
+        author: newUser.author
+      })
+      .then(res => {
+        const updatedUsers = this.state.users.concat(res.data);
+        this.setState({ users: updatedUsers });
+      })
+      .catch(err => console.log(err));
+  };
+
   renderUsers = () => {
     return this.state.users.map(user => {
       console.log(user);
@@ -37,9 +50,17 @@ export default class Users extends Component {
 
   render() {
     return (
-      <div className="userList">
-        <h2>Authors</h2>
-        {this.state.users.length ? this.renderUsers() : <p>List is loading</p>}
+      <div className="allBlogComponents">
+        <div className="posts">
+          <h2>Be an Author</h2>
+          <AddUser submitItem={this.handleSubmitUser} />
+          <h2>Authors</h2>
+          {this.state.users.length ? (
+            this.renderUsers()
+          ) : (
+            <p>List is loading</p>
+          )}
+        </div>
       </div>
     );
   }

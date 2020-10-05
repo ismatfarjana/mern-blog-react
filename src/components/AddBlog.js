@@ -39,34 +39,34 @@ export default class AddBlog extends Component {
       <div className="addNewPost">
         <div className="addPostParts">
           <div className="addPostPartsPart">
-            <label>Title</label>
             <input
               type="text"
               value={this.state.title}
               name="Title"
               onChange={this.handleTitleChange}
             />
+            <label>Title</label>
           </div>
 
           <div className="addPostPartsPart">
-            <label>Author</label>
             <input
               type="text"
               value={this.state.author}
               onChange={this.handleAuthorChange}
             />
+            <label>Author</label>
           </div>
         </div>
 
         <br />
 
-        <label>Write post here</label>
         <textarea
           type="text"
           value={this.state.description}
           rows="3"
           onChange={this.handleDescriptionChange}
         />
+        <label>Write post here</label>
 
         <br />
 

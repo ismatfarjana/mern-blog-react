@@ -4,6 +4,7 @@ import "./App.css";
 import githublogo from "./githublogo.png";
 import linkedinlogo from "./linkedinlogo.png";
 import Blogs from "./components/Blogs";
+import Users from "./components/Users";
 import Time from "./components/Time";
 
 function App() {
@@ -13,10 +14,19 @@ function App() {
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <div className="headerParts">
           <Time />
+          <p>
+            {new Date().getDate()}.{new Date().getMonth() + 1}.
+            {new Date().getFullYear()}
+          </p>
         </div>
 
         <div className="headerParts">
-          <p>SYEDA'S MERN BLOG</p>
+          <h2>BLOG</h2>
+          <p>Built on MERN</p>
+          <p className="copyright">
+            Copyright © 2020 | BLOG Developed by SyedaIsmatFarjana | MERN |
+            Melbourne, Australia | All rights reserved
+          </p>
 
           <div className="social">
             <a
@@ -36,14 +46,10 @@ function App() {
               <img alt="" className="sociallogo" src={linkedinlogo} />
             </a>
           </div>
-
-          <p>
-            {new Date().getDate()}.{new Date().getMonth() + 1}.
-            {new Date().getFullYear()}
-          </p>
         </div>
       </header>
-      <div className="blogList">
+      <div className="componentList">
+        <Users />
         <Blogs />
       </div>
     </div>
